@@ -32,9 +32,10 @@ app.use(helmet())
 app.use(cors())
 app.use(xss())
 
-app.get('/', (req,res)=> {
-  res.send('Events API')
-})
+// app.get('/', (req,res)=> {
+//   res.send('Events API')
+// })
+app.use(express.static('public'))
 // routes
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/events', authenticateUser, eventsRouter)

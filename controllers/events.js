@@ -61,7 +61,7 @@ const deleteEvent = async (req, res) => {
         throw new NotFoundError(`No event with ${eventId}`)
     }
 
-    res.status(StatusCodes.OK).send
+    res.status(StatusCodes.OK).json({msg: "The entry was deleted."})
 }
 
 module.exports = {
